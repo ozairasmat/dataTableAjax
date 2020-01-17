@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ajax DataTable</title>
+		<!-- DataTable CSS files -->
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.6.1/css/buttons.dataTables.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/select/1.3.1/css/select.dataTables.min.css">
+
+		<!-- DataTable JS files -->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+	<script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+	<script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.min.js"></script>
+	<script type="text/javascript" src="
+	https://cdn.datatables.net/buttons/1.6.1/js/buttons.flash.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+	<script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.html5.min.js"></script>
+	<script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.print.min.js"></script>
+	<script type="text/javascript" src="https://cdn.datatables.net/select/1.3.1/js/dataTables.select.min.js"></script>
+</head>
+<body>
+<div class="container-fluid">
+	<table id='userTable' class='table jambo_table bulk_action'>
+		<thead>
+		<tr>
+		  <th data-visible="false" data-orderable="false"></th>
+		  <th data-orderable="false"></th>
+		  <th>Name</th>
+		  <th>Category</th>
+		  <th>Registration#</th>
+		  <th>Make</th>
+		  <th>Model</th>
+		  <th>Reserve</th>
+		  <th>keyword</th>
+		  <th>Seller Code</th>
+		  <th>Created On</th>
+		  <th>Status</th>
+		  <th data-orderable="false" class="tablet mobile">Action</th>
+		</tr>
+		</thead>
+	</table>
+</div>
+<script type="text/javascript">
+	
+  let exportOptions = {'rows': {selected: true} ,columns: ['2,3,4,5,6,7,8,9,10,11']};
+  let dtButtons = [{ extend : 'excel',exportOptions: exportOptions},{ extend : 'csv',exportOptions: exportOptions},{ extend : 'pdf',exportOptions: exportOptions},{ extend : 'print',exportOptions: exportOptions},];
+  let dt1 = customeDatatable({
+    'div' : '#tableId',
+    'url' : 'URL FOR POSTED DATA',
+    'orderColumn' : 10,
+    'iDisplayLength' : 10,
+    'dom' : 'Bfrtip',
+    'columnCustomeTypeTarget' : 10,
+    'defaultSearching': false,
+    'responsive': true,
+    'lengthMenu': '', // [5, 10, 25, 50, 100, -1], [5, 10, 25, 50, 100, "All"]
+    'order' : 'desc',
+    'selectStyle' : 'multi',
+    'collectionButtons' : dtButtons,
+    'processing' : true,
+    'serverSide' : true,
+    'processingGif' : '<span>Loading.. <img  src="load.gif" /></span>',
+    'buttonClassName' : 'btn-sm',
+    'columnCustomType' : 'date-eu',
+    'customFieldsArray': ['category_id','seller_id','seller_code','sale_person_id','item_status','keyword','registration_no','days_filter','datefrom','dateto'],
+    'dataColumnArray': [{'data':'id'},{'data':'image'},{'data':'name'},{'data':'category_id'},{'data':'registration_no'},{'data':'make'},{'data':'model'},{'data':'price'},{'data':'keyword'},{'data':'seller_id'},{'data':'created_on'},{'data':'item_status'},{'data':'action'}]
+  });
+</script>
+</body>
+</html>
