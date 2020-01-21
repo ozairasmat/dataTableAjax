@@ -20,7 +20,7 @@
     'columnCustomeTypeTarget' : 10,
     'defaultSearching': false,
     'responsive': true,
-    'lengthMenu': '', // [5, 10, 25, 50, 100, -1], [5, 10, 25, 50, 100, "All"]
+    'lengthMenu': '', // [[5, 10, 25, 50, 100, -1], [5, 10, 25, 50, 100, "All"]]
     'order' : 'desc',
     'selectStyle' : 'multi',
     'collectionButtons' : dtButtons,
@@ -84,7 +84,7 @@
       "infoFiltered":"Loading..",
       "processing": options.processingGif
     },
-    'lengthMenu': [options.lengthMenu],
+    'lengthMenu': options.lengthMenu, // [[5, 10, 25, 50, 100, -1], [5, 10, 25, 50, 100, "All"]]
     'iDisplayLength': options.iDisplayLength,
   });
   return datatableObj;
