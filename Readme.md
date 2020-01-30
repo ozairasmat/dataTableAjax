@@ -41,7 +41,7 @@ To use DataTables, the primary way to obtain the software is to use the [DataTab
     'buttonClassName' : 'btn-sm',
     'columnCustomType' : 'date-eu',
     'customFieldsArray': ['#ids array for custom filtration'], // 'email','username'
-    'dataColumnArray': [{'COLUMNS ARRAY'}] // {'data': 'id'...}
+    'dataColumnArray': [{'COLUMNS ARRAY'}] // {'data': 'id'},...
   });
 
 
