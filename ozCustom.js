@@ -24,6 +24,7 @@
     'order' : 'desc',
     'selectStyle' : 'multi',
     'collectionButtons' : dtButtons,
+    'exportOptionsSelect' : {},
     'processing' : true,
     'serverSide' : true,
     'processingGif' : '<span>Loading.. <img  src="load.gif" /></span>',
@@ -52,12 +53,12 @@
         extend: 'selectAll',
         className: options.buttonClassName,
         text: 'Select All',
-        exportOptions: exportOptions
+        exportOptions: options.exportOptionsSelect
       },{
         extend: 'selectNone',
         className: options.buttonClassName,
         text: 'Deselect',
-        exportOptions:exportOptions
+        exportOptions:options.exportOptionsSelect
       }, 
     ],
     'select': {
