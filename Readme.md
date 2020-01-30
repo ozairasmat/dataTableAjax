@@ -40,8 +40,8 @@ To use DataTables, the primary way to obtain the software is to use the [DataTab
     'processingGif' : '<span>Loading.. <img  src="load.gif" /></span>',
     'buttonClassName' : 'btn-sm',
     'columnCustomType' : 'date-eu',
-    'customFieldsArray': ['category_id','seller_id','seller_code','sale_person_id','item_status','keyword','registration_no','days_filter','datefrom','dateto'],
-    'dataColumnArray': [{'data':'id'},{'data':'image'},{'data':'name'},{'data':'category_id'},{'data':'registration_no'},{'data':'make'},{'data':'model'},{'data':'price'},{'data':'keyword'},{'data':'seller_id'},{'data':'created_on'},{'data':'item_status'},{'data':'action'}]
+    'customFieldsArray': ['#ids array for custom filtration'], // 'email','username'
+    'dataColumnArray': [{'COLUMNS ARRAY'}] // {'data': 'id'...}
   });
 
 
